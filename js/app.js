@@ -6,12 +6,10 @@ var table = d3.select("#ufo-table");
 var loader = d3.select("#loader");
 
 // get data from api
-var url = "https://jsonblob.com/api/jsonBlob/myapikey";
+var url = "data.js";
 
 showLoader();
 
-// make the request to get the data for the page, pass it to the init function
-d3.json(url, init);
 
 // add event listeners to the pagination element
 paginationEl.on("click", changePage);
@@ -292,3 +290,5 @@ function hideLoader() {
   table.style("visibility", "visible");
   loader.style("display", "none");
 }
+
+init(dataSet);
